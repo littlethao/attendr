@@ -193,6 +193,7 @@
 				TargetAttributes = {
 					36F7C3AD1DBE3B9900E99997 = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = KJE2J2XKDT;
 						ProvisioningStyle = Automatic;
 					};
 					36F7C3C11DBE3B9900E99997 = {
@@ -410,6 +411,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = KJE2J2XKDT;
 				INFOPLIST_FILE = Attendr/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.makers.Attendr;
@@ -422,6 +424,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = KJE2J2XKDT;
 				INFOPLIST_FILE = Attendr/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.makers.Attendr;
@@ -503,6 +506,7 @@
 				36F7C3D81DBE3B9900E99997 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		36F7C3D91DBE3B9900E99997 /* Build configuration list for PBXNativeTarget "AttendrTests" */ = {
 			isa = XCConfigurationList;
@@ -511,6 +515,7 @@
 				36F7C3DB1DBE3B9900E99997 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		36F7C3DC1DBE3B9900E99997 /* Build configuration list for PBXNativeTarget "AttendrUITests" */ = {
 			isa = XCConfigurationList;
@@ -519,6 +524,7 @@
 				36F7C3DE1DBE3B9900E99997 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
