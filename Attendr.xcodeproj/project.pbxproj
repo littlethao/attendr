@@ -7,13 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		363045C41DC0CD0E00B06BA6 /* FacebookAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 363045C31DC0CD0E00B06BA6 /* FacebookAuth.swift */; };
+		363045C71DC0F93E00B06BA6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 363045C61DC0F93E00B06BA6 /* Main.storyboard */; };
 		36F7C3B21DBE3B9900E99997 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36F7C3B11DBE3B9900E99997 /* AppDelegate.swift */; };
 		36F7C3B41DBE3B9900E99997 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36F7C3B31DBE3B9900E99997 /* ViewController.swift */; };
-		36F7C3B71DBE3B9900E99997 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36F7C3B51DBE3B9900E99997 /* Main.storyboard */; };
 		36F7C3B91DBE3B9900E99997 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36F7C3B81DBE3B9900E99997 /* Assets.xcassets */; };
 		36F7C3BC1DBE3B9900E99997 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36F7C3BA1DBE3B9900E99997 /* LaunchScreen.storyboard */; };
 		36F7C3C71DBE3B9900E99997 /* AttendrTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36F7C3C61DBE3B9900E99997 /* AttendrTests.swift */; };
 		36F7C3D21DBE3B9900E99997 /* AttendrUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36F7C3D11DBE3B9900E99997 /* AttendrUITests.swift */; };
+		545F2C67E4208FAD5F905357 /* Pods_AttendrUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 181507A0D25FB6B789239A42 /* Pods_AttendrUITests.framework */; };
+		DF8637F283B3590BB3E4FADA /* Pods_Attendr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAFB47F2A685D6D42B50B957 /* Pods_Attendr.framework */; };
+		F89382583E5B442575B91896 /* Pods_AttendrTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B53DB01A379B21796DC3EC60 /* Pods_AttendrTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,10 +38,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		181507A0D25FB6B789239A42 /* Pods_AttendrUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AttendrUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2D0934FA93323F161EECCFFA /* Pods-AttendrTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AttendrTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AttendrTests/Pods-AttendrTests.debug.xcconfig"; sourceTree = "<group>"; };
+		363045C31DC0CD0E00B06BA6 /* FacebookAuth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookAuth.swift; sourceTree = "<group>"; };
+		363045C51DC0F77500B06BA6 /* Attendr.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Attendr.entitlements; sourceTree = "<group>"; };
+		363045C61DC0F93E00B06BA6 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = ../../../../Main.storyboard; sourceTree = "<group>"; };
 		36F7C3AE1DBE3B9900E99997 /* Attendr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Attendr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		36F7C3B11DBE3B9900E99997 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		36F7C3B31DBE3B9900E99997 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		36F7C3B61DBE3B9900E99997 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		36F7C3B81DBE3B9900E99997 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		36F7C3BB1DBE3B9900E99997 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		36F7C3BD1DBE3B9900E99997 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -47,6 +55,13 @@
 		36F7C3CD1DBE3B9900E99997 /* AttendrUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AttendrUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		36F7C3D11DBE3B9900E99997 /* AttendrUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendrUITests.swift; sourceTree = "<group>"; };
 		36F7C3D31DBE3B9900E99997 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3B445A6582E426734F812659 /* Pods-AttendrUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AttendrUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AttendrUITests/Pods-AttendrUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		745EEF66521E5A722C883B13 /* Pods-Attendr.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Attendr.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Attendr/Pods-Attendr.debug.xcconfig"; sourceTree = "<group>"; };
+		B53DB01A379B21796DC3EC60 /* Pods_AttendrTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AttendrTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D71701CCC13EBD7DD72EB6F7 /* Pods-AttendrTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AttendrTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AttendrTests/Pods-AttendrTests.release.xcconfig"; sourceTree = "<group>"; };
+		E0E3E44331FE9FD0A0FD120F /* Pods-AttendrUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AttendrUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AttendrUITests/Pods-AttendrUITests.release.xcconfig"; sourceTree = "<group>"; };
+		E962639EB9D89340A86DB4F3 /* Pods-Attendr.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Attendr.release.xcconfig"; path = "Pods/Target Support Files/Pods-Attendr/Pods-Attendr.release.xcconfig"; sourceTree = "<group>"; };
+		FAFB47F2A685D6D42B50B957 /* Pods_Attendr.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Attendr.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF8637F283B3590BB3E4FADA /* Pods_Attendr.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F89382583E5B442575B91896 /* Pods_AttendrTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,6 +85,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				545F2C67E4208FAD5F905357 /* Pods_AttendrUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +99,8 @@
 				36F7C3C51DBE3B9900E99997 /* AttendrTests */,
 				36F7C3D01DBE3B9900E99997 /* AttendrUITests */,
 				36F7C3AF1DBE3B9900E99997 /* Products */,
+				CAA7D8182A19FB601DE2765C /* Pods */,
+				C05177A8AC1B3A9EFE88D765 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,12 +117,14 @@
 		36F7C3B01DBE3B9900E99997 /* Attendr */ = {
 			isa = PBXGroup;
 			children = (
+				363045C51DC0F77500B06BA6 /* Attendr.entitlements */,
 				36F7C3B11DBE3B9900E99997 /* AppDelegate.swift */,
 				36F7C3B31DBE3B9900E99997 /* ViewController.swift */,
-				36F7C3B51DBE3B9900E99997 /* Main.storyboard */,
+				363045C61DC0F93E00B06BA6 /* Main.storyboard */,
 				36F7C3B81DBE3B9900E99997 /* Assets.xcassets */,
 				36F7C3BA1DBE3B9900E99997 /* LaunchScreen.storyboard */,
 				36F7C3BD1DBE3B9900E99997 /* Info.plist */,
+				363045C31DC0CD0E00B06BA6 /* FacebookAuth.swift */,
 			);
 			path = Attendr;
 			sourceTree = "<group>";
@@ -125,6 +147,29 @@
 			path = AttendrUITests;
 			sourceTree = "<group>";
 		};
+		C05177A8AC1B3A9EFE88D765 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FAFB47F2A685D6D42B50B957 /* Pods_Attendr.framework */,
+				B53DB01A379B21796DC3EC60 /* Pods_AttendrTests.framework */,
+				181507A0D25FB6B789239A42 /* Pods_AttendrUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CAA7D8182A19FB601DE2765C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				745EEF66521E5A722C883B13 /* Pods-Attendr.debug.xcconfig */,
+				E962639EB9D89340A86DB4F3 /* Pods-Attendr.release.xcconfig */,
+				2D0934FA93323F161EECCFFA /* Pods-AttendrTests.debug.xcconfig */,
+				D71701CCC13EBD7DD72EB6F7 /* Pods-AttendrTests.release.xcconfig */,
+				3B445A6582E426734F812659 /* Pods-AttendrUITests.debug.xcconfig */,
+				E0E3E44331FE9FD0A0FD120F /* Pods-AttendrUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +177,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 36F7C3D61DBE3B9900E99997 /* Build configuration list for PBXNativeTarget "Attendr" */;
 			buildPhases = (
+				AC52A292410D5C71BD52F4A0 /* [CP] Check Pods Manifest.lock */,
 				36F7C3AA1DBE3B9900E99997 /* Sources */,
 				36F7C3AB1DBE3B9900E99997 /* Frameworks */,
 				36F7C3AC1DBE3B9900E99997 /* Resources */,
+				07BE6CC6FDD29D63F1F7B952 /* [CP] Embed Pods Frameworks */,
+				71544DAE572D389CAC1CC43B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -149,9 +197,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 36F7C3D91DBE3B9900E99997 /* Build configuration list for PBXNativeTarget "AttendrTests" */;
 			buildPhases = (
+				5B6A0398F03FB7C21D16791D /* [CP] Check Pods Manifest.lock */,
 				36F7C3BE1DBE3B9900E99997 /* Sources */,
 				36F7C3BF1DBE3B9900E99997 /* Frameworks */,
 				36F7C3C01DBE3B9900E99997 /* Resources */,
+				AF30C01CB58FC32EA16F737C /* [CP] Embed Pods Frameworks */,
+				94A01FBB39551D751853CE4D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -167,9 +218,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 36F7C3DC1DBE3B9900E99997 /* Build configuration list for PBXNativeTarget "AttendrUITests" */;
 			buildPhases = (
+				168392280E9A75070DB04077 /* [CP] Check Pods Manifest.lock */,
 				36F7C3C91DBE3B9900E99997 /* Sources */,
 				36F7C3CA1DBE3B9900E99997 /* Frameworks */,
 				36F7C3CB1DBE3B9900E99997 /* Resources */,
+				93E37B0B033EA12CA11CFDD0 /* [CP] Embed Pods Frameworks */,
+				074DEC6FAEAE0125312D99BE /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -195,6 +249,11 @@
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = KJE2J2XKDT;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 					36F7C3C11DBE3B9900E99997 = {
 						CreatedOnToolsVersion = 8.0;
@@ -233,9 +292,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				363045C71DC0F93E00B06BA6 /* Main.storyboard in Resources */,
 				36F7C3BC1DBE3B9900E99997 /* LaunchScreen.storyboard in Resources */,
 				36F7C3B91DBE3B9900E99997 /* Assets.xcassets in Resources */,
-				36F7C3B71DBE3B9900E99997 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -255,12 +314,151 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		074DEC6FAEAE0125312D99BE /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AttendrUITests/Pods-AttendrUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		07BE6CC6FDD29D63F1F7B952 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Attendr/Pods-Attendr-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		168392280E9A75070DB04077 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		5B6A0398F03FB7C21D16791D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		71544DAE572D389CAC1CC43B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Attendr/Pods-Attendr-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		93E37B0B033EA12CA11CFDD0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AttendrUITests/Pods-AttendrUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		94A01FBB39551D751853CE4D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AttendrTests/Pods-AttendrTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AC52A292410D5C71BD52F4A0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		AF30C01CB58FC32EA16F737C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AttendrTests/Pods-AttendrTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		36F7C3AA1DBE3B9900E99997 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				36F7C3B41DBE3B9900E99997 /* ViewController.swift in Sources */,
+				363045C41DC0CD0E00B06BA6 /* FacebookAuth.swift in Sources */,
 				36F7C3B21DBE3B9900E99997 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -297,14 +495,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		36F7C3B51DBE3B9900E99997 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				36F7C3B61DBE3B9900E99997 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		36F7C3BA1DBE3B9900E99997 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -409,8 +599,10 @@
 		};
 		36F7C3D71DBE3B9900E99997 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 745EEF66521E5A722C883B13 /* Pods-Attendr.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Attendr/Attendr.entitlements;
 				DEVELOPMENT_TEAM = KJE2J2XKDT;
 				INFOPLIST_FILE = Attendr/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -422,8 +614,10 @@
 		};
 		36F7C3D81DBE3B9900E99997 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E962639EB9D89340A86DB4F3 /* Pods-Attendr.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Attendr/Attendr.entitlements;
 				DEVELOPMENT_TEAM = KJE2J2XKDT;
 				INFOPLIST_FILE = Attendr/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -435,6 +629,7 @@
 		};
 		36F7C3DA1DBE3B9900E99997 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2D0934FA93323F161EECCFFA /* Pods-AttendrTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -449,6 +644,7 @@
 		};
 		36F7C3DB1DBE3B9900E99997 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D71701CCC13EBD7DD72EB6F7 /* Pods-AttendrTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -463,6 +659,7 @@
 		};
 		36F7C3DD1DBE3B9900E99997 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3B445A6582E426734F812659 /* Pods-AttendrUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = AttendrUITests/Info.plist;
@@ -476,6 +673,7 @@
 		};
 		36F7C3DE1DBE3B9900E99997 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E0E3E44331FE9FD0A0FD120F /* Pods-AttendrUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = AttendrUITests/Info.plist;

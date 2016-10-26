@@ -6,15 +6,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Attendr/ViewController.swift"
-            timestampString = "499020878.024127"
+            timestampString = "499185838.465651"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "39"
-            endingLineNumber = "39">
+            startingLineNumber = "50"
+            endingLineNumber = "50">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
