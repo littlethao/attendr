@@ -7,29 +7,40 @@
 //
 
 import UIKit
+import FBSDKLoginKit
 
-class ViewController: UIViewController {
-
-    @IBOutlet weak var output: UITextField!
+class ViewController: UIViewController, FBSDKLoginButtonDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        let loginButton = FBSDKLoginButton()
+        view.addSubview(loginButton)
+        // better to use constraints than frames here
+        loginButton.frame = CGRect(x: 16, y: 50, width: view.frame.width - 32, height: 50)
+        
+        loginButton.delegate = self
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
+        print("Logout successful")
     }
+    
+    func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
+        if error != nil {
+            print(error)
+        }
+        print("Login successful")
+    }
+    
 
     
-    @IBAction func UIButton() {
-        let alert = UIAlertController(title: "Welcome to Attendr", message: "Hello Daters!",
-                                      preferredStyle: UIAlertControllerStyle.alert)
-        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler:
-            nil))
-        present(alert, animated: true, completion: nil)
-    }
+//    @IBAction func UIButton() {
+//        let alert = UIAlertController(title: "Welcome to Attendr", message: "Hello Daters!",
+//                                      preferredStyle: UIAlertControllerStyle.alert)
+//        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler:
+//            nil))
+//        present(alert, animated: true, completion: nil)
+//    }
     
 }
 
