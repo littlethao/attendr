@@ -43,11 +43,38 @@ class FacebookAuthController: UIViewController, FBSDKLoginButtonDelegate {
             FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, name, first_name, last_name, picture.type(large), email"]).start(completionHandler: { (connection, result, error) -> Void in
                 if (error == nil){
                     self.dict = result as! [String : AnyObject]
-                    print(result!)
-                    print(self.dict)
+                    self.postUser()
                 }
             })
         }
+    }
+    
+    func postUser() {
+        let firstName = self.dict["first_name"]!
+        let lastName = self.dict["last_name"]!
+        let picture = self.dict["picture"]!["url"]!
+        let email = "email@email.com"
+        let age = "18"
+        let gender = "male"
+        var request = URLRequest(url: URL(string: "https://attendr-server.herokuapp.com/users/new")!)
+        request.httpMethod = "POST"
+        let postString = "first=\(firstName)&last=\(lastName)&pic=\(picture)&email=\(email)&age=\(age)&gender=\(gender)"
+        request.httpBody = postString.data(using: .utf8)
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let data = data, error == nil else {
+                print("error=\(error)")
+                return
+            }
+            
+            if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {
+                print("statusCode should be 200, but is \(httpStatus.statusCode)")
+                print("response = \(response)")
+            }
+            
+            let responseString = String(data: data, encoding: .utf8)
+            print("responseString = \(responseString)")
+        }
+        task.resume()
     }
 
 }
