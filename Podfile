@@ -10,6 +10,8 @@ target 'Attendr' do
 pod 'FacebookCore'
 pod 'FacebookLogin'
 pod 'FacebookShare'
+pod 'Alamofire', '4.0'
+pod 'SwiftyJSON'
 
   target 'AttendrTests' do
     inherit! :search_paths
