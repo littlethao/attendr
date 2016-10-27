@@ -8,8 +8,11 @@
 
 import UIKit
 import FBSDKLoginKit
+import FBSDKCoreKit
 
 class FacebookAuthController: UIViewController, FBSDKLoginButtonDelegate {
+    
+    var dict : [String : AnyObject]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,6 +22,8 @@ class FacebookAuthController: UIViewController, FBSDKLoginButtonDelegate {
         loginButton.frame = CGRect(x: 16, y: 50, width: view.frame.width - 32, height: 50)
         
         loginButton.delegate = self
+        
+        
     }
     
     func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
@@ -30,6 +35,19 @@ class FacebookAuthController: UIViewController, FBSDKLoginButtonDelegate {
             print(error)
         }
         print("Login successful")
+        self.getFBUserData()
 }
+    
+    func getFBUserData(){
+        if((FBSDKAccessToken.current()) != nil){
+            FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, name, first_name, last_name, picture.type(large), email"]).start(completionHandler: { (connection, result, error) -> Void in
+                if (error == nil){
+                    self.dict = result as! [String : AnyObject]
+                    print(result!)
+                    print(self.dict)
+                }
+            })
+        }
+    }
 
 }
