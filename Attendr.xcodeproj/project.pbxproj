@@ -17,7 +17,8 @@
 		545F2C67E4208FAD5F905357 /* Pods_AttendrUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 181507A0D25FB6B789239A42 /* Pods_AttendrUITests.framework */; };
 		B958C1D71DC2120100F48AEC /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B958C1D61DC2120100F48AEC /* EventTableViewCell.swift */; };
 		B958C1D91DC2161700F48AEC /* EventTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B958C1D81DC2161700F48AEC /* EventTableViewController.swift */; };
-		D83979941DC1FA5500FD3EB8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D83979931DC1FA5500FD3EB8 /* Main.storyboard */; };
+		B9B1BD9B1DC3989B00DA580F /* ResponseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B1BD9A1DC3989B00DA580F /* ResponseViewController.swift */; };
+		B9B1BD9D1DC3A61900DA580F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9B1BD9C1DC3A61900DA580F /* Main.storyboard */; };
 		DF8637F283B3590BB3E4FADA /* Pods_Attendr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAFB47F2A685D6D42B50B957 /* Pods_Attendr.framework */; };
 		F89382583E5B442575B91896 /* Pods_AttendrTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B53DB01A379B21796DC3EC60 /* Pods_AttendrTests.framework */; };
 /* End PBXBuildFile section */
@@ -61,8 +62,9 @@
 		B53DB01A379B21796DC3EC60 /* Pods_AttendrTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AttendrTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B958C1D61DC2120100F48AEC /* EventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
 		B958C1D81DC2161700F48AEC /* EventTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTableViewController.swift; sourceTree = "<group>"; };
+		B9B1BD9A1DC3989B00DA580F /* ResponseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseViewController.swift; sourceTree = "<group>"; };
+		B9B1BD9C1DC3A61900DA580F /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		D71701CCC13EBD7DD72EB6F7 /* Pods-AttendrTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AttendrTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AttendrTests/Pods-AttendrTests.release.xcconfig"; sourceTree = "<group>"; };
-		D83979931DC1FA5500FD3EB8 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		E0E3E44331FE9FD0A0FD120F /* Pods-AttendrUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AttendrUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AttendrUITests/Pods-AttendrUITests.release.xcconfig"; sourceTree = "<group>"; };
 		E962639EB9D89340A86DB4F3 /* Pods-Attendr.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Attendr.release.xcconfig"; path = "Pods/Target Support Files/Pods-Attendr/Pods-Attendr.release.xcconfig"; sourceTree = "<group>"; };
 		FAFB47F2A685D6D42B50B957 /* Pods_Attendr.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Attendr.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -127,10 +129,11 @@
 				36F7C3B81DBE3B9900E99997 /* Assets.xcassets */,
 				36F7C3BA1DBE3B9900E99997 /* LaunchScreen.storyboard */,
 				36F7C3BD1DBE3B9900E99997 /* Info.plist */,
+				B9B1BD9C1DC3A61900DA580F /* Main.storyboard */,
 				363045C31DC0CD0E00B06BA6 /* FacebookAuthController.swift */,
-				D83979931DC1FA5500FD3EB8 /* Main.storyboard */,
 				B958C1D61DC2120100F48AEC /* EventTableViewCell.swift */,
 				B958C1D81DC2161700F48AEC /* EventTableViewController.swift */,
+				B9B1BD9A1DC3989B00DA580F /* ResponseViewController.swift */,
 			);
 			path = Attendr;
 			sourceTree = "<group>";
@@ -298,9 +301,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9B1BD9D1DC3A61900DA580F /* Main.storyboard in Resources */,
 				36F7C3BC1DBE3B9900E99997 /* LaunchScreen.storyboard in Resources */,
 				36F7C3B91DBE3B9900E99997 /* Assets.xcassets in Resources */,
-				D83979941DC1FA5500FD3EB8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -464,6 +467,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				36F7C3B41DBE3B9900E99997 /* ViewController.swift in Sources */,
+				B9B1BD9B1DC3989B00DA580F /* ResponseViewController.swift in Sources */,
 				363045C41DC0CD0E00B06BA6 /* FacebookAuthController.swift in Sources */,
 				B958C1D71DC2120100F48AEC /* EventTableViewCell.swift in Sources */,
 				B958C1D91DC2161700F48AEC /* EventTableViewController.swift in Sources */,

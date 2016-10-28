@@ -14,7 +14,9 @@ class EventTableViewCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
-    @IBOutlet weak var linkLabel: UILabel!
+    
+    @IBOutlet weak var responseButton: UIButton!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()

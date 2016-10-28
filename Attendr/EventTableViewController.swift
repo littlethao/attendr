@@ -12,12 +12,8 @@ import SwiftyJSON
 
 class EventTableViewController: UITableViewController {
 
-    
     // MARK: Properties
-
-    //declares a property on EventTableViewController and initializes it with a default value (an empty array of Event objects)
-    
-    var TableData:Array< String > = Array < String >()
+    var TableData:Array< Array<String> > = Array < Array<String>>()
     
     var eventName = ""
     var eventAddress = ""
@@ -29,8 +25,7 @@ class EventTableViewController: UITableViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         get_data_from_url("https://attendr-server.herokuapp.com/events")
-           }
-
+    }
     
     
     func get_data_from_url(_ link:String) {
@@ -42,18 +37,13 @@ class EventTableViewController: UITableViewController {
         request.cachePolicy = NSURLRequest.CachePolicy.reloadIgnoringCacheData
         
         let task = session.dataTask(with: request as URLRequest, completionHandler: {
-            (
-            data, response, error) in
-            
-            guard let _:Data = data, let _:URLResponse = response, error == nil else {
-                return
-            }
-            
+            (data, response, error) in
+                guard let _:Data = data, let _:URLResponse = response, error == nil else {
+                    return
+                }
             self.extract_json(data!)
-            
-        })
-        
-        task.resume()
+            })
+            task.resume()
     }
     
     
@@ -64,7 +54,6 @@ class EventTableViewController: UITableViewController {
 
 
     // MARK: - Table view data source
-
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
@@ -77,11 +66,15 @@ class EventTableViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-       
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! EventTableViewCell
+        
         // Configure the cell...
-        cell.textLabel?.text = TableData[indexPath.row]
+        cell.nameLabel?.text = TableData[indexPath.row][0]
+        cell.addressLabel?.text = TableData[indexPath.row][1]
+        cell.dateLabel?.text = TableData[indexPath.row][2]
+        cell.responseButton.tag = indexPath.row
+        
+        cell.responseButton.addTarget(self, action: #selector(buttonHandler(_:)), for: UIControlEvents.touchUpInside)
         
         return cell
       
@@ -92,32 +85,33 @@ class EventTableViewController: UITableViewController {
     
         let json: Any?
             
-            do
+        do {
+            json = try JSONSerialization.jsonObject(with: data, options: [])
+        }
+        
+        catch {
+            return
+        }
+        
+        guard let _ = json as? NSDictionary else {
+            return
+        }
+        
+        if let events_object = json as? NSDictionary
             {
-                json = try JSONSerialization.jsonObject(with: data, options: [])
-        }
-        catch
-        {
-            return
-        }
-        
-        guard let data_list = json as? NSDictionary else
-        {
-            return
-        }
-        
-            if let events_object = json as? NSDictionary
-                {
-                    if let events = events_object["events"] as? NSArray
+                if let events = events_object["events"] as? NSArray
                     {
                         for i in 0 ..< (events.count) {
                             if let event = events[i] as? NSDictionary
                             {
-                                if let name = event["name"] as? String
+                                if let name = event["name"] as? String , let address = event["address"] as? String , let date = event["date"] as? String
                                 {
-                                    TableData.append(name)
+                                    let event_id = "\(event["id"])" 
+                                    let item = [name, address, date, event_id]
+                                    TableData.append(item)
                                 }
                             }
+                            
                         }
                     }
                 }
@@ -128,6 +122,22 @@ class EventTableViewController: UITableViewController {
     func do_table_refresh() {
         self.tableView.reloadData()
     }
+    
+    func buttonHandler(_ sender:UIButton!) {
+            // Instantiate SecondViewController
+            let responseViewController = self.storyboard?.instantiateViewController(withIdentifier: "ResponseViewController") as! ResponseViewController
+            
+            // Set "Hello World" as a value to myStringValue
+            responseViewController.myStringValue = TableData[sender.tag]
+        
+            // Take user to SecondViewController
+            self.present(responseViewController, animated: true)
+            
+
+    }
+    
+    
+    
     
     
     /*
