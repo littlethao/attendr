@@ -36,11 +36,12 @@ class FacebookAuthController: UIViewController, FBSDKLoginButtonDelegate {
         }
         print("Login successful")
         self.getFBUserData()
+//         play with this user data, ewan
 }
     
     func getFBUserData(){
         if((FBSDKAccessToken.current()) != nil){
-            FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, name, first_name, last_name, picture.type(large), email"]).start(completionHandler: { (connection, result, error) -> Void in
+            FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, first_name, last_name, picture.type(large),gender, email"]).start(completionHandler: { (connection, result, error) -> Void in
                 if (error == nil){
                     self.dict = result as! [String : AnyObject]
                     self.postUser()
@@ -52,13 +53,12 @@ class FacebookAuthController: UIViewController, FBSDKLoginButtonDelegate {
     func postUser() {
         let firstName = self.dict["first_name"]!
         let lastName = self.dict["last_name"]!
-        let picture = self.dict["picture"]!["url"]!
-        let email = "email@email.com"
-        let age = "18"
-        let gender = "male"
+        let facebookId = self.dict["id"]!
+        let age = "nil"
+        let gender = self.dict["gender"]!
         var request = URLRequest(url: URL(string: "https://attendr-server.herokuapp.com/users/new")!)
         request.httpMethod = "POST"
-        let postString = "first=\(firstName)&last=\(lastName)&pic=\(picture)&email=\(email)&age=\(age)&gender=\(gender)"
+        let postString = "first=\(firstName)&last=\(lastName)&fbid=\(facebookId)&age=\(age)&gender=\(gender)"
         request.httpBody = postString.data(using: .utf8)
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             guard let data = data, error == nil else {
