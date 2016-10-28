@@ -12,6 +12,13 @@ import SwiftyJSON
 
 class EventTableViewController: UITableViewController {
 
+    
+    // MARK: Properties
+
+    //declares a property on EventTableViewController and initializes it with a default value (an empty array of Event objects)
+    
+    var TableData:Array< String > = Array < String >()
+    
     var eventName = ""
     var eventAddress = ""
     var eventDate = ""
@@ -21,25 +28,34 @@ class EventTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        get_data_from_url("https://attendr-server.herokuapp.com/events")
+           }
+
+    
+    
+    func get_data_from_url(_ link:String) {
+        let url:URL = URL(string: link)!
+        let session = URLSession.shared
         
-        Alamofire.request("https://attendr-server.herokuapp.com/events").responseJSON { response in
+        let request = NSMutableURLRequest(url: url)
+        request.httpMethod = "GET"
+        request.cachePolicy = NSURLRequest.CachePolicy.reloadIgnoringCacheData
+        
+        let task = session.dataTask(with: request as URLRequest, completionHandler: {
+            (
+            data, response, error) in
             
-            if let value = response.result.value {
-                let json = JSON(value)
-                
-                self.eventName = "\(json["events"][0]["name"].stringValue)"
-                self.eventAddress = "\(json["events"][0]["address"].stringValue)"
-                self.eventDate = "\(json["events"][0]["date"].stringValue)"
-                self.eventLink = "\(json["events"][0]["link"].stringValue)"
-                
-                
-//                print(json["events"][0]["name"].stringValue)
-//                print(json["events"][0]["address"].stringValue)
-//                print(json["events"][0]["date"].stringValue)
-//                print(json["events"][0]["link"].stringValue)
+            guard let _:Data = data, let _:URLResponse = response, error == nil else {
+                return
             }
-        }
+            
+            self.extract_json(data!)
+            
+        })
+        
+        task.resume()
     }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -56,25 +72,64 @@ class EventTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 1
+        return TableData.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cellIdentifier = "EventTableViewCell"
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! EventTableViewCell
+       
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
 
         // Configure the cell...
-        cell.nameLabel.text = eventName
-        cell.addressLabel.text = eventAddress
-        cell.dateLabel.text = eventDate
-        cell.linkLabel.text = eventLink
+        cell.textLabel?.text = TableData[indexPath.row]
         
-
         return cell
+      
     }
 
+    
+    func extract_json(_ data: Data) {
+    
+        let json: Any?
+            
+            do
+            {
+                json = try JSONSerialization.jsonObject(with: data, options: [])
+        }
+        catch
+        {
+            return
+        }
+        
+        guard let data_list = json as? NSDictionary else
+        {
+            return
+        }
+        
+            if let events_object = json as? NSDictionary
+                {
+                    if let events = events_object["events"] as? NSArray
+                    {
+                        for i in 0 ..< (events.count) {
+                            if let event = events[i] as? NSDictionary
+                            {
+                                if let name = event["name"] as? String
+                                {
+                                    TableData.append(name)
+                                }
+                            }
+                        }
+                    }
+                }
+        DispatchQueue.main.async(execute: {self.do_table_refresh()})
+    }
 
+    
+    func do_table_refresh() {
+        self.tableView.reloadData()
+    }
+    
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

@@ -9,7 +9,7 @@
 import UIKit
 import FBSDKLoginKit
 
-class ViewController: UIViewController, FBSDKLoginButtonDelegate {
+class ViewController: UIViewController , FBSDKLoginButtonDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,20 +30,7 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
             print(error)
         }
         print("Login successful")
-    }
-    
-
-    
-//    @IBAction func UIButton() {
-//        let alert = UIAlertController(title: "Welcome to Attendr", message: "Hello Daters!",
-//                                      preferredStyle: UIAlertControllerStyle.alert)
-//        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler:
-//            nil))
-//        present(alert, animated: true, completion: nil)
-//    }
-    
 }
-
-
+}
 
 

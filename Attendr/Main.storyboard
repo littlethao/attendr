@@ -32,25 +32,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dMC-fn-Nyf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-183" y="143"/>
-        </scene>
-        <!--Events Controller-->
-        <scene sceneID="0Kx-JG-FmL">
-            <objects>
-                <viewController id="vaE-Qd-EAI" customClass="EventsController" customModule="Attendr" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="5Cj-nj-M8V"/>
-                        <viewControllerLayoutGuide type="bottom" id="455-3j-7rz"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="COS-32-6yi" customClass="EventsController">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="I7k-bo-F9F" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1281" y="143"/>
+            <point key="canvasLocation" x="-644" y="136"/>
         </scene>
         <!--Event Table View Controller-->
         <scene sceneID="zeJ-oW-Yf9">
@@ -61,11 +43,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="EventTableViewCell" rowHeight="90" id="drR-HE-cm6" customClass="EventTableViewCell" customModule="Attendr" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="cell" rowHeight="90" id="drR-HE-cm6" customClass="EventTableViewCell" customModule="Attendr" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="drR-HE-cm6" id="UPO-4d-qih">
-                                    <frame key="frameInset" width="375" height="89"/>
+                                    <frame key="frameInset" width="375" height="90"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8Wo-Dw-dLa">
@@ -103,11 +85,10 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="addressLabel" destination="h7m-vc-lln" id="u5y-Iu-ZUI"/>
-                                    <outlet property="dateLabel" destination="V2K-hT-3k7" id="ltH-vE-ONj"/>
-                                    <outlet property="eventLabel" destination="J4O-wL-D2m" id="mwd-BV-IFf"/>
-                                    <outlet property="nameLabel" destination="J4O-wL-D2m" id="xIk-Yv-dMt"/>
-                                    <outlet property="websiteLabel" destination="Wni-lm-7o8" id="2AV-0b-ysD"/>
+                                    <outlet property="addressLabel" destination="h7m-vc-lln" id="idD-Kx-Oex"/>
+                                    <outlet property="dateLabel" destination="V2K-hT-3k7" id="kfH-fR-37u"/>
+                                    <outlet property="linkLabel" destination="Wni-lm-7o8" id="Mgy-wc-928"/>
+                                    <outlet property="nameLabel" destination="J4O-wL-D2m" id="f7n-id-aBz"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -119,7 +100,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OZu-fK-Hep" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="519" y="143"/>
+            <point key="canvasLocation" x="68" y="135"/>
         </scene>
     </scenes>
 </document>
