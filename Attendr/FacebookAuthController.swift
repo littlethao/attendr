@@ -13,16 +13,16 @@ import FBSDKCoreKit
 class FacebookAuthController: UIViewController, FBSDKLoginButtonDelegate {
     
     var dict : [String : AnyObject]!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         let loginButton = FBSDKLoginButton()
         view.addSubview(loginButton)
         // better to use constraints than frames here
         loginButton.frame = CGRect(x: 16, y: 50, width: view.frame.width - 32, height: 50)
         
         loginButton.delegate = self
-        
         
     }
     
@@ -36,7 +36,21 @@ class FacebookAuthController: UIViewController, FBSDKLoginButtonDelegate {
         }
         print("Login successful")
         self.getFBUserData()
+        self.transitionToEvents()
 }
+    func transitionToEvents(){
+        // Instantiate SecondViewController
+        let eventsViewController = self.storyboard?.instantiateViewController(withIdentifier: "TabBarViewController") as! TabBarViewController
+        
+        // Take user to SecondViewController
+        self.present(eventsViewController, animated: true)
+    }
+    
+    
+    
+    
+    
+    
     
     func getFBUserData(){
         if((FBSDKAccessToken.current()) != nil){

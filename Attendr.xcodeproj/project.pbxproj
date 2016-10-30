@@ -15,6 +15,7 @@
 		36F7C3C71DBE3B9900E99997 /* AttendrTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36F7C3C61DBE3B9900E99997 /* AttendrTests.swift */; };
 		36F7C3D21DBE3B9900E99997 /* AttendrUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36F7C3D11DBE3B9900E99997 /* AttendrUITests.swift */; };
 		545F2C67E4208FAD5F905357 /* Pods_AttendrUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 181507A0D25FB6B789239A42 /* Pods_AttendrUITests.framework */; };
+		A72C5C341DC6273700EE7ADB /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72C5C331DC6273700EE7ADB /* TabBarViewController.swift */; };
 		B958C1D71DC2120100F48AEC /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B958C1D61DC2120100F48AEC /* EventTableViewCell.swift */; };
 		B958C1D91DC2161700F48AEC /* EventTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B958C1D81DC2161700F48AEC /* EventTableViewController.swift */; };
 		B9B1BD9B1DC3989B00DA580F /* ResponseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B1BD9A1DC3989B00DA580F /* ResponseViewController.swift */; };
@@ -59,6 +60,7 @@
 		36F7C3D31DBE3B9900E99997 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3B445A6582E426734F812659 /* Pods-AttendrUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AttendrUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AttendrUITests/Pods-AttendrUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		745EEF66521E5A722C883B13 /* Pods-Attendr.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Attendr.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Attendr/Pods-Attendr.debug.xcconfig"; sourceTree = "<group>"; };
+		A72C5C331DC6273700EE7ADB /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		B53DB01A379B21796DC3EC60 /* Pods_AttendrTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AttendrTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B958C1D61DC2120100F48AEC /* EventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
 		B958C1D81DC2161700F48AEC /* EventTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTableViewController.swift; sourceTree = "<group>"; };
@@ -134,6 +136,7 @@
 				B958C1D61DC2120100F48AEC /* EventTableViewCell.swift */,
 				B958C1D81DC2161700F48AEC /* EventTableViewController.swift */,
 				B9B1BD9A1DC3989B00DA580F /* ResponseViewController.swift */,
+				A72C5C331DC6273700EE7ADB /* TabBarViewController.swift */,
 			);
 			path = Attendr;
 			sourceTree = "<group>";
@@ -470,6 +473,7 @@
 				B9B1BD9B1DC3989B00DA580F /* ResponseViewController.swift in Sources */,
 				363045C41DC0CD0E00B06BA6 /* FacebookAuthController.swift in Sources */,
 				B958C1D71DC2120100F48AEC /* EventTableViewCell.swift in Sources */,
+				A72C5C341DC6273700EE7ADB /* TabBarViewController.swift in Sources */,
 				B958C1D91DC2161700F48AEC /* EventTableViewController.swift in Sources */,
 				36F7C3B21DBE3B9900E99997 /* AppDelegate.swift in Sources */,
 			);
