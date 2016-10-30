@@ -30,7 +30,7 @@
         <!--Matches-->
         <scene sceneID="pPe-o7-VjY">
             <objects>
-                <viewController id="ZHo-Zf-sM5" customClass="ChatViewController" sceneMemberID="viewController">
+                <viewController id="ZHo-Zf-sM5" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="OAe-HD-SVA"/>
                         <viewControllerLayoutGuide type="bottom" id="9eM-y4-Ox9"/>
@@ -44,41 +44,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3g6-mW-X8L" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1" y="-233"/>
-        </scene>
-        <!--Messages-->
-        <scene sceneID="Fyj-wE-Kw0">
-            <objects>
-                <tableViewController id="MBD-yX-ftQ" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Jhf-50-cNn">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="B95-fd-vMg">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="B95-fd-vMg" id="9hS-7K-hcD">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="MBD-yX-ftQ" id="Lwo-QP-C4f"/>
-                            <outlet property="delegate" destination="MBD-yX-ftQ" id="uUk-pr-5Qg"/>
-                        </connections>
-                    </tableView>
-                    <tabBarItem key="tabBarItem" title="Messages" id="pP0-BZ-UbY"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="tZJ-az-UVD" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="12" y="528"/>
+            <point key="canvasLocation" x="20" y="113"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="5WC-Ea-HWB">
             <objects>
-                <tabBarController storyboardIdentifier="TabBarViewController" id="beR-Mq-KqL" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabBarController" id="beR-Mq-KqL" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="0Pg-Xj-jMj">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -86,8 +57,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="5rI-1C-H00" kind="relationship" relationship="viewControllers" id="3o5-bo-lSu"/>
-                        <segue destination="ZHo-Zf-sM5" kind="relationship" relationship="viewControllers" id="veJ-vN-RUZ"/>
-                        <segue destination="MBD-yX-ftQ" kind="relationship" relationship="viewControllers" id="HYc-4B-So9"/>
+                        <segue destination="ZHo-Zf-sM5" kind="relationship" relationship="viewControllers" id="dKc-yq-ryC"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lTa-Rp-Kmo" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -159,7 +129,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OZu-fK-Hep" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1" y="-910"/>
+            <point key="canvasLocation" x="20" y="-568"/>
         </scene>
         <!--Response View Controller-->
         <scene sceneID="IEk-i3-0cP">
@@ -177,7 +147,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jsc-M1-eKO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="719" y="-911"/>
+            <point key="canvasLocation" x="686" y="-568"/>
         </scene>
     </scenes>
 </document>

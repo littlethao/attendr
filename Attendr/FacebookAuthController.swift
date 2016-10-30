@@ -40,10 +40,10 @@ class FacebookAuthController: UIViewController, FBSDKLoginButtonDelegate {
 }
     func transitionToEvents(){
         // Instantiate SecondViewController
-        let eventsViewController = self.storyboard?.instantiateViewController(withIdentifier: "TabBarViewController") as! TabBarViewController
+        let TabBarController = self.storyboard?.instantiateViewController(withIdentifier: "TabBarController") as! UITabBarController
         
         // Take user to SecondViewController
-        self.present(eventsViewController, animated: true)
+        self.present(TabBarController, animated: true)
     }
     
     
