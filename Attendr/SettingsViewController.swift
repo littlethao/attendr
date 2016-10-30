@@ -10,25 +10,17 @@ import UIKit
 import FBSDKLoginKit
 import FBSDKCoreKit
 
-class FacebookAuthController: UIViewController, FBSDKLoginButtonDelegate {
+class SettingsViewController: UIViewController, FBSDKLoginButtonDelegate {
     
     var dict : [String : AnyObject]!
-   
     
-    
-    override func viewDidAppear(_ animated:Bool){
-        if FBSDKAccessToken.current() != nil{
-            self.transitionToEvents()
-        }
-    }
-
     override func viewDidLoad() {
         super.viewDidLoad()
-            let loginButton = FBSDKLoginButton()
-            view.addSubview(loginButton)
-            // better to use constraints than frames here
-            loginButton.frame = CGRect(x: 16, y: 50, width: view.frame.width - 32, height: 50)
-            loginButton.delegate = self
+        let loginButton = FBSDKLoginButton()
+        view.addSubview(loginButton)
+        // better to use constraints than frames here
+        loginButton.frame = CGRect(x: 16, y: 50, width: view.frame.width - 32, height: 50)
+        loginButton.delegate = self
         
     }
     
@@ -42,9 +34,9 @@ class FacebookAuthController: UIViewController, FBSDKLoginButtonDelegate {
         }
         print("Login successful")
         self.getFBUserData()
-
+        
         self.transitionToEvents()
-}
+    }
     func transitionToEvents(){
         // Instantiate SecondViewController
         let TabBarController = self.storyboard?.instantiateViewController(withIdentifier: "TabBarController") as! UITabBarController
@@ -52,11 +44,6 @@ class FacebookAuthController: UIViewController, FBSDKLoginButtonDelegate {
         // Take user to SecondViewController
         self.present(TabBarController, animated: true)
     }
-    
-    
-    
-    
-    
     
     
     func getFBUserData(){
@@ -81,6 +68,7 @@ class FacebookAuthController: UIViewController, FBSDKLoginButtonDelegate {
         let postString = "first=\(firstName)&last=\(lastName)&fbid=\(facebookId)&age=\(age)&gender=\(gender)"
         request.httpBody = postString.data(using: .utf8)
         
+        
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             guard let data = data, error == nil else {
                 print("error=\(error)")
@@ -94,45 +82,8 @@ class FacebookAuthController: UIViewController, FBSDKLoginButtonDelegate {
             
             let responseString = String(data: data, encoding: .utf8)
             print("responseString = \(responseString)")
-            extract_json(data)
         }
         task.resume()
     }
-
+    
 }
-
-
-
-func extract_json(_ data: Data) {
-    
-    let json: Any?
-    
-    do {
-        json = try JSONSerialization.jsonObject(with: data, options: [])
-    }
-        
-    catch {
-        return
-    }
-    
-    guard let _ = json as? NSDictionary else {
-        return
-    }
-    
-    if let user_object = json as? NSDictionary
-    {
-        if let user_id = user_object["user_id"] as? Int
-        {
-            struct defaultsKeys {
-                static let user_id = "user_id"
-            }
-            
-            let defaults = UserDefaults.standard
-            defaults.setValue(user_id, forKey: defaultsKeys.user_id)
-            defaults.synchronize()
-            let stringOne = defaults.string(forKey: "user_id")
-            print("User ID is: \(stringOne)")
-        }
-    }
-}
-

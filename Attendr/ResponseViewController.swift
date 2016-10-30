@@ -23,6 +23,11 @@ class ResponseViewController: UIViewController {
         
         // We will simply print out the value here
         print("The value of myStringValue is: \(myStringValue!)")
+        let defaults = UserDefaults.standard
+        
+        if let stringOne = defaults.string(forKey: "user_id") {
+               print("User ID is: \(stringOne)")
+        }
     }
     
     override func didReceiveMemoryWarning() {
