@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -19,20 +20,39 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lh4-Hk-zLm">
-                                <frame key="frameInset" minX="130" minY="303" width="115" height="60"/>
+                                <frame key="frameInset" minX="130" minY="524" width="115" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Events"/>
                                 <connections>
                                     <segue destination="5rI-1C-H00" kind="show" id="hnF-NR-ccx"/>
                                 </connections>
                             </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="M3o-94-qZI">
+                                <frame key="frameInset" minX="55" minY="274" width="200" height="332"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </stackView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Screen Shot 2016-10-30 at 20.23.14" translatesAutoresizingMaskIntoConstraints="NO" id="bwO-zL-6YI">
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="247" id="BbV-Av-Wb5"/>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="247" id="OYu-Kj-fPI"/>
+                                    <constraint firstAttribute="height" constant="131" id="Y6f-EX-Ck5"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="131" id="kuC-AE-LFQ"/>
+                                    <constraint firstAttribute="width" secondItem="bwO-zL-6YI" secondAttribute="height" multiplier="247:157" constant="40.904458598726109" id="rPq-Wp-ROv"/>
+                                    <constraint firstAttribute="width" constant="247" id="u7x-EB-c2H"/>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="131" id="yQg-LA-bHZ"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="bwO-zL-6YI" firstAttribute="centerX" secondItem="MS4-jp-ogt" secondAttribute="centerX" id="WTW-JZ-BtY"/>
+                            <constraint firstItem="bwO-zL-6YI" firstAttribute="centerY" secondItem="MS4-jp-ogt" secondAttribute="centerY" id="vQK-ah-v9Z"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dMC-fn-Nyf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-644" y="136"/>
+            <point key="canvasLocation" x="-644" y="135.38230884557723"/>
         </scene>
         <!--Event Table View Controller-->
         <scene sceneID="zeJ-oW-Yf9">
@@ -119,4 +139,7 @@
             <point key="canvasLocation" x="788" y="134"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Screen Shot 2016-10-30 at 20.23.14" width="1004" height="332"/>
+    </resources>
 </document>
