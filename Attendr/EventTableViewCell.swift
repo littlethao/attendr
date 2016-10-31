@@ -17,7 +17,6 @@ class EventTableViewCell: UITableViewCell {
     
     @IBOutlet weak var responseButton: UIButton!
     
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
