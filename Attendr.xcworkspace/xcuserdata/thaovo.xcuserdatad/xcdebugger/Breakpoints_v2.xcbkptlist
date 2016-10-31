@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Attendr/EventTableViewController.swift"
-            timestampString = "499624046.772427"
+            timestampString = "499643236.621764"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "103"
-            endingLineNumber = "103"
+            startingLineNumber = "109"
+            endingLineNumber = "109"
             landmarkName = "extract_json(_:)"
             landmarkType = "7">
          </BreakpointContent>

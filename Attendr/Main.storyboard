@@ -17,12 +17,21 @@
                     <view key="view" contentMode="scaleToFill" id="MS4-jp-ogt">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="city1_cycling_meetup" translatesAutoresizingMaskIntoConstraints="NO" id="cWE-qn-S06"/>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="cWE-qn-S06" firstAttribute="top" secondItem="MS4-jp-ogt" secondAttribute="top" id="0gQ-Q5-pfd"/>
+                            <constraint firstItem="LsM-tI-fCK" firstAttribute="top" secondItem="cWE-qn-S06" secondAttribute="bottom" id="Apm-oq-jBl"/>
+                            <constraint firstItem="cWE-qn-S06" firstAttribute="leading" secondItem="MS4-jp-ogt" secondAttribute="leading" id="ReC-GA-0kj"/>
+                            <constraint firstAttribute="trailing" secondItem="cWE-qn-S06" secondAttribute="trailing" id="vMX-lQ-2Qr"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dMC-fn-Nyf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2062" y="-230"/>
+            <point key="canvasLocation" x="-2063.1999999999998" y="-230.73463268365819"/>
         </scene>
         <!--Matches-->
         <scene sceneID="pPe-o7-VjY">
@@ -105,34 +114,34 @@
         <scene sceneID="zeJ-oW-Yf9">
             <objects>
                 <tableViewController storyboardIdentifier="EventTableViewController" id="5rI-1C-H00" customClass="EventTableViewController" customModule="Attendr" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="91" sectionHeaderHeight="28" sectionFooterHeight="28" id="tTa-by-qHO">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="200" sectionHeaderHeight="28" sectionFooterHeight="28" id="tTa-by-qHO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="cell" rowHeight="91" id="drR-HE-cm6" customClass="EventTableViewCell" customModule="Attendr" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="91"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="cell" rowHeight="200" id="drR-HE-cm6" customClass="EventTableViewCell" customModule="Attendr" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="200"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="drR-HE-cm6" id="UPO-4d-qih">
-                                    <frame key="frameInset" width="375" height="90"/>
+                                    <frame key="frameInset" width="375" height="199"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V2K-hT-3k7">
-                                            <frame key="frameInset" minX="18" minY="55" width="349" height="19"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Event 1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J4O-wL-D2m">
-                                            <frame key="frameInset" minX="18" minY="16" width="349" height="31"/>
+                                            <frame key="frameInset" minX="13" minY="133" width="349" height="31"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
-                                            <nil key="textColor"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V2K-hT-3k7">
+                                            <frame key="frameInset" minX="13" minY="172" width="349" height="19"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mV0-Ol-qX6" userLabel="Response Button">
-                                            <frame key="frameInset" minY="7" width="375" height="90"/>
+                                            <frame key="frameInset" width="375" height="199"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </button>
                                     </subviews>
@@ -182,7 +191,7 @@
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="Back"/>
                                                 <connections>
-                                                    <segue destination="5rI-1C-H00" kind="show" id="pvv-MD-dZa"/>
+                                                    <segue destination="5rI-1C-H00" kind="show" id="q4l-js-Apb"/>
                                                 </connections>
                                             </button>
                                             <connections>
@@ -192,6 +201,16 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Ct-hz-2fx">
+                                <frame key="frameInset" minX="16" minY="64" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Interested"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mlf-iA-EIp">
+                                <frame key="frameInset" minX="232" minY="64" width="127" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Go to meetup.com"/>
+                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Event name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ds3-WR-nw0">
                                 <frame key="frameInset" minX="16" minY="122" width="343" height="72"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -220,16 +239,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Ct-hz-2fx">
-                                <frame key="frameInset" minX="16" minY="64" width="97" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Interested"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mlf-iA-EIp">
-                                <frame key="frameInset" minX="232" minY="64" width="127" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Go to meetup.com"/>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -247,7 +256,10 @@
             <point key="canvasLocation" x="-239.19999999999999" y="-941.37931034482767"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="city1_cycling_meetup" width="585" height="390"/>
+    </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="pvv-MD-dZa"/>
+        <segue reference="q4l-js-Apb"/>
     </inferredMetricsTieBreakers>
 </document>

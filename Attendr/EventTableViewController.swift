@@ -15,6 +15,7 @@ class EventTableViewController: UITableViewController {
     // MARK: Properties
     var TableData:Array< Array<String> > = Array < Array<String>>()
     
+    let tphoto = TablePhoto()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,11 +64,16 @@ class EventTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! EventTableViewCell
         
+        let picture = tphoto.captures[indexPath.row % tphoto.captures.count];
+        
         // Configure the cell...
         cell.nameLabel?.text = TableData[indexPath.row][0]
         cell.addressLabel?.text = TableData[indexPath.row][1]
         cell.dateLabel?.text = TableData[indexPath.row][2]
         cell.responseButton.tag = indexPath.row
+        
+        
+        cell.backgroundView = UIImageView(image: UIImage(named: picture.filename));
         
         cell.responseButton.addTarget(self, action: #selector(buttonHandler(_:)), for: UIControlEvents.touchUpInside)
         
