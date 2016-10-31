@@ -12,23 +12,38 @@ class ResponseViewController: UIViewController {
 
     var myStringValue:Array<String>!
     
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var addressLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
+    
+    @IBOutlet weak var interestedButton: UIButton!
+    @IBOutlet weak var meetupLinkButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        nameLabel.text = "\(myStringValue[0])"
+        addressLabel.text = "\(myStringValue[1])"
+        dateLabel.text = "\(myStringValue[2])"
+        descriptionLabel.text = "\(myStringValue[4].html2String)"
+        
+        
+//        interestedButton
+        meetupLinkButton.addTarget(self, action: #selector(didTapMeetupLink(_:)), for: UIControlEvents.touchUpInside)
     }
 
+    @IBAction func didTapMeetupLink(_ sender:UIButton!) {
+        let url = URL(string: "\(myStringValue[5])")!
+        UIApplication.shared.open(url, options: [:], completionHandler: nil)
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        // Configure the cell...
         postRSVP()
   
     }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
+
     func postRSVP() {
         // We will simply print out the value here
         print("The value of myStringValue is: \(myStringValue)")
@@ -59,10 +74,9 @@ class ResponseViewController: UIViewController {
             print("responseString = \(responseString)")
         }
         task.resume()
+        }
     }
     
-    
-}
 
     /*
     // MARK: - Navigation
@@ -74,4 +88,19 @@ class ResponseViewController: UIViewController {
     }
     */
 
+}
+
+extension String {
+    var html2AttributedString: NSAttributedString? {
+        guard let data = data(using: .utf8) else { return nil }
+        do {
+            return try NSAttributedString(data: data, options: [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType, NSCharacterEncodingDocumentAttribute: String.Encoding.utf8.rawValue], documentAttributes: nil)
+        } catch let error as NSError {
+            print(error.localizedDescription)
+            return  nil
+        }
+    }
+    var html2String: String {
+        return html2AttributedString?.string ?? ""
+    }
 }
