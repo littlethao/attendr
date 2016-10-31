@@ -28,7 +28,7 @@ class ResponseViewController: UIViewController {
         descriptionLabel.text = "\(myStringValue[4].html2String)"
         
         
-//        interestedButton
+        interestedButton.addTarget(self, action: #selector(postRSVP(_:)), for: UIControlEvents.touchUpInside)
         meetupLinkButton.addTarget(self, action: #selector(didTapMeetupLink(_:)), for: UIControlEvents.touchUpInside)
     }
 
@@ -39,12 +39,9 @@ class ResponseViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        // Configure the cell...
-        postRSVP()
-  
     }
 
-    func postRSVP() {
+    @IBAction func postRSVP(_ sender:UIButton!) {
         // We will simply print out the value here
         print("The value of myStringValue is: \(myStringValue)")
         let event_id = myStringValue[3] 
@@ -77,17 +74,6 @@ class ResponseViewController: UIViewController {
         }
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 
 extension String {

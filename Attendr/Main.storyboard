@@ -114,39 +114,30 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="91"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="drR-HE-cm6" id="UPO-4d-qih">
-                                    <frame key="frameInset" width="375" height="91"/>
+                                    <frame key="frameInset" width="375" height="90"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cxL-xj-kmt">
-                                            <frame key="frameInset" minX="93" minY="34" width="274" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V2K-hT-3k7">
+                                            <frame key="frameInset" minX="18" minY="55" width="349" height="19"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Event 1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J4O-wL-D2m">
+                                            <frame key="frameInset" minX="18" minY="16" width="349" height="31"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mV0-Ol-qX6" userLabel="Response Button">
-                                            <frame key="frameInset" minX="18" minY="34" width="58" height="48"/>
+                                            <frame key="frameInset" minY="7" width="375" height="90"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <state key="normal" title="RSVP"/>
                                         </button>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V2K-hT-3k7">
-                                            <frame key="frameInset" minX="93" minY="63" width="274" height="19"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Event 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J4O-wL-D2m">
-                                            <frame key="frameInset" minX="18" minY="8" width="349" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="addressLabel" destination="cxL-xj-kmt" id="BGe-9B-Qdk"/>
                                     <outlet property="dateLabel" destination="V2K-hT-3k7" id="kfH-fR-37u"/>
                                     <outlet property="nameLabel" destination="J4O-wL-D2m" id="f7n-id-aBz"/>
                                     <outlet property="responseButton" destination="mV0-Ol-qX6" id="rDV-be-f7O"/>
@@ -166,7 +157,7 @@
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                 </containerView>
             </objects>
-            <point key="canvasLocation" x="-1014" y="-941"/>
+            <point key="canvasLocation" x="-1015.2" y="-941.37931034482767"/>
         </scene>
         <!--Response View Controller-->
         <scene sceneID="IEk-i3-0cP">
@@ -190,33 +181,33 @@
                                                 <rect key="frame" x="16" y="7" width="83" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="Back"/>
+                                                <connections>
+                                                    <segue destination="5rI-1C-H00" kind="show" id="pvv-MD-dZa"/>
+                                                </connections>
                                             </button>
                                             <connections>
-                                                <segue destination="5rI-1C-H00" kind="show" id="JcQ-Xp-qoY"/>
+                                                <segue destination="5rI-1C-H00" kind="show" id="fAC-P0-CTi"/>
                                             </connections>
                                         </barButtonItem>
-                                        <connections>
-                                            <outlet property="backBarButtonItem" destination="apA-fr-zVt" id="jIo-GG-j9s"/>
-                                        </connections>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Event name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ds3-WR-nw0">
-                                <frame key="frameInset" minX="16" minY="50" width="343" height="72"/>
+                                <frame key="frameInset" minX="16" minY="122" width="343" height="72"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Address" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ovt-KB-5AC">
-                                <frame key="frameInset" minX="16" minY="173" width="343" height="45"/>
+                                <frame key="frameInset" minX="16" minY="245" width="343" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a8G-62-pVj">
-                                <frame key="frameInset" minX="16" minY="137" width="343" height="28"/>
+                                <frame key="frameInset" minX="16" minY="209" width="343" height="28"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -230,12 +221,12 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Ct-hz-2fx">
-                                <frame key="frameInset" minX="16" minY="241" width="97" height="30"/>
+                                <frame key="frameInset" minX="16" minY="64" width="97" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Interested"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mlf-iA-EIp">
-                                <frame key="frameInset" minX="232" minY="241" width="127" height="30"/>
+                                <frame key="frameInset" minX="232" minY="64" width="127" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Go to meetup.com"/>
                             </button>
@@ -257,6 +248,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="JcQ-Xp-qoY"/>
+        <segue reference="pvv-MD-dZa"/>
     </inferredMetricsTieBreakers>
 </document>
