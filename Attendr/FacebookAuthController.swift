@@ -74,11 +74,10 @@ class FacebookAuthController: UIViewController, FBSDKLoginButtonDelegate {
         let firstName = self.dict["first_name"]!
         let lastName = self.dict["last_name"]!
         let facebookId = self.dict["id"]!
-        let age = "nil"
         let gender = self.dict["gender"]!
         var request = URLRequest(url: URL(string: "https://attendr-server.herokuapp.com/users/new")!)
         request.httpMethod = "POST"
-        let postString = "first=\(firstName)&last=\(lastName)&fbid=\(facebookId)&age=\(age)&gender=\(gender)"
+        let postString = "first=\(firstName)&last=\(lastName)&fbid=\(facebookId)&gender=\(gender)"
         request.httpBody = postString.data(using: .utf8)
         
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
