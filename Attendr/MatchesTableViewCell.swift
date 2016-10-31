@@ -11,8 +11,7 @@ import UIKit
 class MatchesTableViewCell: UITableViewCell {
 
     @IBOutlet weak var nameLabel: UILabel!
-    
-    
+    @IBOutlet weak var matchPhoto: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -26,3 +25,11 @@ class MatchesTableViewCell: UITableViewCell {
     }
 
 }
+
+
+//if let url = NSURL(string: "http://graph.facebook.com/\(fbId)/picture?type=large") {
+//    if let data = NSData(contentsOf: url as URL) {
+//        imageURL.image = UIImage(data: data as Data)
+//        print(imageURL)
+//    }
+//}

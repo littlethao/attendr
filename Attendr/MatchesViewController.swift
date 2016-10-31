@@ -20,6 +20,7 @@ class MatchesTableViewController: UITableViewController {
     var matchFirst = ""
     var matchLast = ""
     var matchId = ""
+    var imageURL:UIImageView!
     
     
     override func viewDidLoad() {
@@ -73,7 +74,11 @@ class MatchesTableViewController: UITableViewController {
         
         // Configure the cell...
         cell.nameLabel?.text = TableData[indexPath.row][0] + " " + TableData[indexPath.row][1]
-                
+        if let url = NSURL(string: "http://graph.facebook.com/\(TableData[indexPath.row][2])/picture?type=large") {
+            if let data = NSData(contentsOf: url as URL) {
+                cell.matchPhoto.image = UIImage(data: data as Data)
+            }
+        }
         return cell
         
     }
@@ -103,13 +108,15 @@ class MatchesTableViewController: UITableViewController {
                 for i in 0 ..< (matches.count) {
                     if let match = matches[i] as? NSDictionary
                     {
-                        if let first = match["first"] as? String , let last = match["last"] as? String
+                        if let first = match["first"] as? String, let last = match["last"] as? String
                     
                         {
 //                            let matchId = match["id"] as? String
-                            let item = [first, last]
+                            let fbId = match["fbid"] as! String
+
+                            let item = [first, last, fbId]
+                            
                             TableData.append(item)
-                            print(TableData)
                         }
                     }
                     
@@ -118,7 +125,6 @@ class MatchesTableViewController: UITableViewController {
         }
         DispatchQueue.main.async(execute: {self.do_table_refresh()})
     }
-    
     
     func do_table_refresh() {
         self.tableView.reloadData()
