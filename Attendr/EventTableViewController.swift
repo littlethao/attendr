@@ -106,9 +106,11 @@ class EventTableViewController: UITableViewController {
                                 if let name = event["name"] as? String , let address = event["address"] as? String , let date = event["date"] as? String,
                                     let description = event["description"] as? String, let link = event["link"] as? String
                                 {
+                                    let long = event["longitude"] ?? ""
+                                    let lat = event["longitude"] ?? ""
                                     let event_id = "\(event["id"] ?? "")"
-                                    let item = [name, address, date, event_id, description, link]
-                                    TableData.append(item)
+                                    let item = [name, address, date, event_id, description, link, long, lat]
+                                    TableData.append(item as! [String])
                                 }
                             }
                             

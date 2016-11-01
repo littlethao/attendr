@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="2D3-9N-4Fh">
+
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="2D3-9N-4Fh">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -102,21 +107,35 @@
         <!--Matches-->
         <scene sceneID="9AK-5A-A08">
             <objects>
-                <tableViewController title="Matches" id="2qH-lg-EWK" customClass="MatchesTableViewController" customModule="Attendr" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="2qH-lg-EWK" customClass="MatchesTableViewController" customModule="Attendr" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="89" sectionHeaderHeight="28" sectionFooterHeight="28" id="vxG-VH-IOa">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <stackView key="tableHeaderView" opaque="NO" contentMode="scaleToFill" axis="vertical" id="Aaj-fi-lPE">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UXM-mJ-3vP">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <items>
+                                        <navigationItem title="Matches" id="TUL-QT-3B7"/>
+                                    </items>
+                                </navigationBar>
+                            </subviews>
+                        </stackView>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="89" id="Fyn-yS-wj4" customClass="MatchesTableViewCell" customModule="Attendr" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="92" width="375" height="89"/>
+
+                                <rect key="frame" x="0.0" y="72" width="375" height="89"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Fyn-yS-wj4" id="GYL-4f-SeS">
-                                    <frame key="frameInset" width="375" height="88"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="89"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Full Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="93L-q8-lBW">
-                                            <frame key="frameInset" minX="96" minY="18" width="271" height="52"/>
+                                            <rect key="frame" x="96" y="18" width="271" height="28"/>
+
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -130,10 +149,25 @@
                                             <frame key="frameInset" minY="-8" width="375" height="86"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </button>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Messages:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zkz-P7-hTQ">
+                                            <rect key="frame" x="96" y="45" width="83" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Message Count" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aXD-Un-swx">
+                                            <rect key="frame" x="180" y="45" width="27" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="matchPhoto" destination="9Lq-Oj-Xie" id="wqR-kB-xAu"/>
+                                    <outlet property="messageCountLabel" destination="aXD-Un-swx" id="BTs-sY-3KY"/>
                                     <outlet property="nameLabel" destination="93L-q8-lBW" id="eWb-YX-WgZ"/>
                                     <outlet property="responseButton" destination="h03-am-9fS" id="zfX-4u-sa7"/>
                                 </connections>
@@ -141,7 +175,6 @@
                         </prototypes>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Matches" id="SOK-pI-1wm"/>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ybG-dQ-jbp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -189,7 +222,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mV0-Ol-qX6" userLabel="Response Button">
-                                            <frame key="frameInset" minY="-9" width="375" height="208"/>
+                                            <rect key="frame" x="0.0" y="-8" width="375" height="207"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </button>
                                     </subviews>
@@ -239,11 +272,11 @@
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="Back"/>
                                                 <connections>
-                                                    <segue destination="beR-Mq-KqL" kind="show" id="WFN-wY-UxS"/>
+                                                    <segue destination="beR-Mq-KqL" kind="show" id="HyX-PS-w9i"/>
                                                 </connections>
                                             </button>
                                             <connections>
-                                                <segue destination="beR-Mq-KqL" kind="showDetail" id="alT-VQ-krS"/>
+                                                <segue destination="beR-Mq-KqL" kind="show" id="KTt-dU-tO1"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -253,11 +286,6 @@
                                 <frame key="frameInset" minX="16" minY="64" width="97" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Interested"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mlf-iA-EIp">
-                                <frame key="frameInset" minX="232" minY="64" width="127" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Go to meetup.com"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Event name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ds3-WR-nw0">
                                 <frame key="frameInset" minX="16" minY="122" width="343" height="72"/>
@@ -287,6 +315,16 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fr0-ip-OjR">
+                                <rect key="frame" x="139" y="64" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="View On Map"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mlf-iA-EIp">
+                                <rect key="frame" x="267" y="64" width="86" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Meetup.com"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -295,6 +333,7 @@
                         <outlet property="dateLabel" destination="a8G-62-pVj" id="bHC-Nf-Phs"/>
                         <outlet property="descriptionLabel" destination="xTR-oP-YEZ" id="x67-jC-9ms"/>
                         <outlet property="interestedButton" destination="6Ct-hz-2fx" id="Sar-4d-gXF"/>
+                        <outlet property="mapButton" destination="Fr0-ip-OjR" id="CVZ-Oa-iUK"/>
                         <outlet property="meetupLinkButton" destination="Mlf-iA-EIp" id="ZIo-JS-0el"/>
                         <outlet property="nameLabel" destination="Ds3-WR-nw0" id="i0W-oh-Jjl"/>
                     </connections>
@@ -308,6 +347,6 @@
         <image name="city1_cycling_meetup" width="585" height="390"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="alT-VQ-krS"/>
+        <segue reference="KTt-dU-tO1"/>
     </inferredMetricsTieBreakers>
 </document>

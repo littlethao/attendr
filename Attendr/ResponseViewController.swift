@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MapKit
 
 class ResponseViewController: UIViewController {
 
@@ -18,16 +19,18 @@ class ResponseViewController: UIViewController {
     @IBOutlet weak var descriptionLabel: UILabel!
     
     @IBOutlet weak var interestedButton: UIButton!
+    @IBOutlet weak var mapButton: UIButton!
     @IBOutlet weak var meetupLinkButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
         nameLabel.text = "\(myStringValue[0])"
         addressLabel.text = "\(myStringValue[1])"
         dateLabel.text = "\(myStringValue[2])"
         descriptionLabel.text = "\(myStringValue[4].html2String)"
         
-        
+        mapButton.addTarget(self, action: #selector(openMap(_:)), for: UIControlEvents.touchUpInside)
         interestedButton.addTarget(self, action: #selector(postRSVP(_:)), for: UIControlEvents.touchUpInside)
         meetupLinkButton.addTarget(self, action: #selector(didTapMeetupLink(_:)), for: UIControlEvents.touchUpInside)
     }
@@ -36,6 +39,33 @@ class ResponseViewController: UIViewController {
         let url = URL(string: "\(myStringValue[5])")!
         UIApplication.shared.open(url, options: [:], completionHandler: nil)
     }
+    
+    @IBAction func openMap(_ sender:UIButton!) {
+            var lng1 = "0.1278" as NSString
+            var lat1 = "51.5074" as NSString
+        
+            if "\(myStringValue[7])" != "" {
+                lng1 = "\(myStringValue[7])" as NSString
+                lat1 = "\(myStringValue[6])" as NSString
+            }
+        
+            let latitude:CLLocationDegrees =  lat1.doubleValue
+            let longitude:CLLocationDegrees =  lng1.doubleValue
+            
+            let regionDistance:CLLocationDistance = 10000
+            let coordinates = CLLocationCoordinate2DMake(latitude, longitude)
+            let regionSpan = MKCoordinateRegionMakeWithDistance(coordinates, regionDistance, regionDistance)
+            let options = [
+                MKLaunchOptionsMapCenterKey: NSValue(mkCoordinate: regionSpan.center),
+                MKLaunchOptionsMapSpanKey: NSValue(mkCoordinateSpan: regionSpan.span)
+            ]
+            let placemark = MKPlacemark(coordinate: coordinates, addressDictionary: nil)
+            let mapItem = MKMapItem(placemark: placemark)
+            mapItem.name = "Event Location"
+            mapItem.openInMaps(launchOptions: options)
+        
+    }
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

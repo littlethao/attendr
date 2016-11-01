@@ -7,15 +7,19 @@
 //
 
 import UIKit
-
-import UIKit
-
+import JSQMessagesViewController
+import FirebaseDatabase
+import FirebaseCore
+import FirebaseAuth
 
 class MatchesTableViewController: UITableViewController {
     
     // MARK: Properties
     var TableData:Array< Array<String> > = Array < Array<String>>()
+    var messages = [JSQMessage]()
+    var messageRef = FIRDatabase.database().reference().child("messages")
     
+
     var matchFirst = ""
     var matchLast = ""
     var matchId = ""
@@ -24,6 +28,7 @@ class MatchesTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         let defaults = UserDefaults.standard
         let user_id = defaults.string(forKey: "user_id") ?? ""
         // Do any additional setup after loading the view, typically from a nib.
@@ -70,6 +75,18 @@ class MatchesTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! MatchesTableViewCell
+
+        let defaults = UserDefaults.standard
+        let myID = defaults.string(forKey: "user_id") ?? ""
+        let theirID = TableData[indexPath.row][3]
+        
+        messageRef.child(myID).child(theirID).observe(.value, with: { snapshot in
+            if snapshot.exists() {
+                cell.messageCountLabel?.text = snapshot.childrenCount.description
+            } else {
+                cell.messageCountLabel?.text = "0"
+            }
+        })
         
         // Configure the cell...
         cell.nameLabel?.text = TableData[indexPath.row][0] + " " + TableData[indexPath.row][1]
@@ -115,7 +132,7 @@ class MatchesTableViewController: UITableViewController {
                         {
 
                             let fbId = match["fbid"] as! String
-                            let matchId = String(match["id"] as! Int)
+                            let matchId = String(match["userid"] as! Int)
                             let item = [first, last, fbId, matchId]
                             
                             TableData.append(item)
