@@ -59,5 +59,7 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
+	<key>UILaunchImageFile</key>
+	<string>logo</string>
 </dict>
 </plist>

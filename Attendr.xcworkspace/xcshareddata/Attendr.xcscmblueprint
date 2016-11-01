@@ -9,7 +9,7 @@
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "BEB5DC3F-CFE8-4F73-A371-3C457F1EB5B5",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
-    "A0D58E34230FFDF48523D930AF8E7ABD9EBACBCB" : "..",
+    "A0D58E34230FFDF48523D930AF8E7ABD9EBACBCB" : "..\/..",
     "0A4FEBD6CA591CA8994ED6EC487E2D592CACAFBA" : "attendr\/"
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "Attendr",
