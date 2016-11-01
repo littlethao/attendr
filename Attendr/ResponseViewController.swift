@@ -27,6 +27,8 @@ class ResponseViewController: UIViewController {
         dateLabel.text = "\(myStringValue[2])"
         descriptionLabel.text = "\(myStringValue[4].html2String)"
         
+        interestedButton.setImage(UIImage(named: "heart_icon.png")?.withRenderingMode(.alwaysOriginal), for: .normal)
+        interestedButton.setImage(UIImage(named: "filled_heart_icon.png")?.withRenderingMode(.alwaysOriginal), for: .selected)
         
         interestedButton.addTarget(self, action: #selector(postRSVP(_:)), for: UIControlEvents.touchUpInside)
         meetupLinkButton.addTarget(self, action: #selector(didTapMeetupLink(_:)), for: UIControlEvents.touchUpInside)
@@ -70,6 +72,7 @@ class ResponseViewController: UIViewController {
             let responseString = String(data: data, encoding: .utf8)
             print("responseString = \(responseString)")
         }
+        sender.isSelected = !sender.isSelected;
         task.resume()
         }
     }
