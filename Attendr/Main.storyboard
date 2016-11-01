@@ -239,11 +239,11 @@
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="Back"/>
                                                 <connections>
-                                                    <segue destination="5rI-1C-H00" kind="show" id="q4l-js-Apb"/>
+                                                    <segue destination="beR-Mq-KqL" kind="show" id="WFN-wY-UxS"/>
                                                 </connections>
                                             </button>
                                             <connections>
-                                                <segue destination="5rI-1C-H00" kind="show" id="fAC-P0-CTi"/>
+                                                <segue destination="beR-Mq-KqL" kind="showDetail" id="alT-VQ-krS"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -308,6 +308,6 @@
         <image name="city1_cycling_meetup" width="585" height="390"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="WaC-GT-MRU"/>
+        <segue reference="alT-VQ-krS"/>
     </inferredMetricsTieBreakers>
 </document>
