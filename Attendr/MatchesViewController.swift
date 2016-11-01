@@ -115,7 +115,7 @@ class MatchesTableViewController: UITableViewController {
                         {
 
                             let fbId = match["fbid"] as! String
-                            let matchId = String(match["id"] as! Int)
+                            let matchId = String(match["userid"] as! Int)
                             let item = [first, last, fbId, matchId]
                             
                             TableData.append(item)
