@@ -26,6 +26,7 @@ class SettingsViewController: UIViewController, FBSDKLoginButtonDelegate {
     
     func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
         print("Logout successful")
+        self.tabBarController?.tabBar.isHidden = true
     }
     
     func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
