@@ -1,15 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="2D3-9N-4Fh">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="5r5-9y-0Nu">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--First Screen View Controller-->
+        <scene sceneID="SRi-lG-3is">
+            <objects>
+                <viewController id="5r5-9y-0Nu" customClass="FirstScreenViewController" customModule="Attendr" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Zee-dx-Rqj"/>
+                        <viewControllerLayoutGuide type="bottom" id="GqP-Z0-lDl"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="5Ou-2b-2WT">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="j9x-1U-UHX">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="343" id="cjI-9w-ZtF"/>
+                                    <constraint firstAttribute="height" constant="128" id="tdJ-lI-tfU"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="j9x-1U-UHX" firstAttribute="centerY" secondItem="5Ou-2b-2WT" secondAttribute="centerY" id="TgI-6g-9nS"/>
+                            <constraint firstItem="j9x-1U-UHX" firstAttribute="centerX" secondItem="5Ou-2b-2WT" secondAttribute="centerX" id="sPI-Bi-FMe"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="logoConstraintY" destination="TgI-6g-9nS" id="w0J-YU-c1B"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="U72-xS-1Ng" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2952.8000000000002" y="-217.24137931034485"/>
+        </scene>
         <!--Facebook Auth Controller-->
         <scene sceneID="rmi-vk-au8">
             <objects>
-                <viewController id="2D3-9N-4Fh" customClass="FacebookAuthController" customModule="Attendr" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FacebookAuthController" id="2D3-9N-4Fh" customClass="FacebookAuthController" customModule="Attendr" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="EJx-MI-Dgo"/>
                         <viewControllerLayoutGuide type="bottom" id="LsM-tI-fCK"/>
@@ -308,6 +341,7 @@
     <resources>
         <image name="city1_cycling_meetup" width="585" height="390"/>
         <image name="heart_icon" width="290" height="302"/>
+        <image name="logo" width="502" height="166"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="9Q3-Dp-Fge"/>
