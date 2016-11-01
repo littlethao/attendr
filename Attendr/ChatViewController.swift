@@ -48,6 +48,8 @@ class ChatViewController: JSQMessagesViewController {
         let TabBarController = self.storyboard?.instantiateViewController(withIdentifier: "TabBarController") as! UITabBarController
         
         // Take user to SecondViewController
+
+        TabBarController.selectedIndex = 1
         self.present(TabBarController, animated: true)
     }
     
