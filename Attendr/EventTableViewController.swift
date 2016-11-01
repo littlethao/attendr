@@ -135,5 +135,4 @@ class EventTableViewController: UITableViewController {
             
 
     }
-    
  }
