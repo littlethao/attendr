@@ -22,7 +22,6 @@ class EventTableViewController: UITableViewController {
         get_data_from_url("https://attendr-server.herokuapp.com/events")
     }
     
-    
     func get_data_from_url(_ link:String) {
         let url:URL = URL(string: link)!
         let session = URLSession.shared
@@ -138,5 +137,4 @@ class EventTableViewController: UITableViewController {
             
 
     }
-    
  }
