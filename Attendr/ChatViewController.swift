@@ -18,10 +18,37 @@ class ChatViewController: JSQMessagesViewController {
  
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(theirID)
+        self.messages.append(JSQMessage(senderId: "", displayName: "", text: "Don't Look Up Here"))
+        let navigationBar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height:49)) // Offset by 20 pixels vertically to take the status bar into account
+        
+        navigationBar.backgroundColor = UIColor.white
+        
+        // Create a navigation item with a title
+        let navigationItem = UINavigationItem()
+        navigationItem.title = "Chat"
+        
+        // Create left and right button for navigation item
+        let leftButton =  UIBarButtonItem(title: "Back", style:   .plain, target: self, action: #selector(self.btn_clicked(_:)))
+        
+        // Create two buttons for the navigation item
+        navigationItem.leftBarButtonItem = leftButton
+        
+        // Assign the navigation item to the navigation bar
+        navigationBar.items = [navigationItem]
+        
+        // Make the navigation bar a subview of the current view controller
+        self.view.addSubview(navigationBar)
         self.senderId = myID
         self.senderDisplayName = ""
         observeMessages()
+    }
+    
+    func btn_clicked(_ sender: UIBarButtonItem) {
+        // Instantiate SecondViewController
+        let TabBarController = self.storyboard?.instantiateViewController(withIdentifier: "TabBarController") as! UITabBarController
+        
+        // Take user to SecondViewController
+        self.present(TabBarController, animated: true)
     }
     
     func observeMessages() {
