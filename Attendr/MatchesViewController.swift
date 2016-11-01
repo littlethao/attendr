@@ -9,8 +9,7 @@
 import UIKit
 
 import UIKit
-import Alamofire
-import SwiftyJSON
+
 
 class MatchesTableViewController: UITableViewController {
     
@@ -79,6 +78,9 @@ class MatchesTableViewController: UITableViewController {
                 cell.matchPhoto.image = UIImage(data: data as Data)
             }
         }
+        cell.responseButton.tag = indexPath.row
+        cell.responseButton.addTarget(self, action: #selector(buttonHandler(_:)), for: UIControlEvents.touchUpInside)
+
         return cell
         
     }
@@ -111,10 +113,10 @@ class MatchesTableViewController: UITableViewController {
                         if let first = match["first"] as? String, let last = match["last"] as? String
                     
                         {
-//                            let matchId = match["id"] as? String
-                            let fbId = match["fbid"] as! String
 
-                            let item = [first, last, fbId]
+                            let fbId = match["fbid"] as! String
+                            let matchId = String(match["id"] as! Int)
+                            let item = [first, last, fbId, matchId]
                             
                             TableData.append(item)
                         }
@@ -132,13 +134,16 @@ class MatchesTableViewController: UITableViewController {
     
     func buttonHandler(_ sender:UIButton!) {
         // Instantiate SecondViewController
-        let responseViewController = self.storyboard?.instantiateViewController(withIdentifier: "ResponseViewController") as! ResponseViewController
+        let chatViewController = self.storyboard?.instantiateViewController(withIdentifier: "ChatViewController") as! ChatViewController
         
         // Set "Hello World" as a value to myStringValue
-        responseViewController.myStringValue = TableData[sender.tag]
+        let defaults = UserDefaults.standard
+        chatViewController.myID = defaults.string(forKey: "user_id") ?? ""
+        chatViewController.theirID = TableData[sender.tag][3]
+        print(TableData[sender.tag][3])
         
         // Take user to SecondViewController
-        self.present(responseViewController, animated: true)
+        self.present(chatViewController, animated: true)
         
         
     }
