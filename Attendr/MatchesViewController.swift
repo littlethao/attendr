@@ -43,6 +43,7 @@ class MatchesTableViewController: UITableViewController {
         let task = session.dataTask(with: request as URLRequest, completionHandler: {
             (data, response, error) in
             guard let _:Data = data, let _:URLResponse = response, error == nil else {
+                print(response)
                 return
             }
             self.extract_json(data!)
@@ -74,6 +75,7 @@ class MatchesTableViewController: UITableViewController {
         
         // Configure the cell...
         cell.nameLabel?.text = TableData[indexPath.row][0] + " " + TableData[indexPath.row][1]
+        cell.eventLabel?.text = TableData[indexPath.row][3]
         if let url = NSURL(string: "http://graph.facebook.com/\(TableData[indexPath.row][2])/picture?type=large") {
             if let data = NSData(contentsOf: url as URL) {
                 cell.matchPhoto.image = UIImage(data: data as Data)
@@ -108,14 +110,13 @@ class MatchesTableViewController: UITableViewController {
                 for i in 0 ..< (matches.count) {
                     if let match = matches[i] as? NSDictionary
                     {
-                        if let first = match["first"] as? String, let last = match["last"] as? String
+                        if let first = match["first"] as? String, let last = match["last"] as? String, let event = match["name"] as? String
                     
                         {
 //                            let matchId = match["id"] as? String
                             let fbId = match["fbid"] as! String
 
-                            let item = [first, last, fbId]
-                            
+                            let item = [first, last, fbId, event]
                             TableData.append(item)
                         }
                     }
