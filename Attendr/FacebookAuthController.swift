@@ -24,12 +24,13 @@ class FacebookAuthController: UIViewController, FBSDKLoginButtonDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        if FBSDKAccessToken.current() == nil{
             let loginButton = FBSDKLoginButton()
             view.addSubview(loginButton)
             // better to use constraints than frames here
             loginButton.frame = CGRect(x: 16, y: 50, width: view.frame.width - 32, height: 50)
             loginButton.delegate = self
-        
+        }
     }
     
     func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
